@@ -1,9 +1,9 @@
 bl_info = {
-    "name": "ARKit BlendShape Bone Recorder",
+    "name": "ARKit Pose Recorder",
     "author": "Max Harlynking",
     "version": (1, 0, 0),
     "blender": (4, 0, 0),
-    "location": "View3D > Sidebar > ARKit Shapes",
+    "location": "View3D > Sidebar > ARKit Poses",
     "description": (
         "Manually pose face bones for each of the 52 ARKit shapes, "
         "save/preview/reset each pose, then bake all saved poses into "
@@ -259,12 +259,12 @@ def get_mirror_target(shape_name):
     return ""
 
 
-REFERENCE_GIF_SUBDIR = "blendshape_bone_mapper_gifs"
+REFERENCE_GIF_SUBDIR = "arkit_pose_recorder_gifs"
  
  
 def get_reference_gif_path(shape_name):
     """Path to the reference GIF for a shape, expected as a sibling folder
-    of this addon file named blendshape_bone_mapper_gifs/<shape_name>.gif"""
+    of this addon file named arkit_pose_recorder_gifs/<shape_name>.gif"""
     addon_dir = os.path.dirname(os.path.abspath(__file__))
     return os.path.join(addon_dir, REFERENCE_GIF_SUBDIR, f"{shape_name}.gif")
 
@@ -814,11 +814,11 @@ class ARKIT_UL_shapes(UIList):
 
 
 class ARKIT_PT_panel(Panel):
-    bl_label = "ARKit BlendShape Recorder"
+    bl_label = "ARKit Pose Recorder"
     bl_idname = "ARKIT_PT_panel"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_category = "ARKit Shapes"
+    bl_category = "ARKit Poses"
 
     def draw(self, context):
         layout = self.layout

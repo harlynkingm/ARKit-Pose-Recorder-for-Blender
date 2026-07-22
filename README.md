@@ -1,4 +1,4 @@
-# ARKit BlendShape Bone Recorder
+# PerfectSync ARKit BlendShape Pose Recorder for Blender
 
 A Blender addon for building the 52 ARKit face blendshapes on a character
 by posing face bones (rather than sculpting mesh shape keys by hand),
@@ -31,20 +31,20 @@ found, it says so directly rather than failing silently.
 
 ## Installation
 
-1. Zip this whole `blendshape_bone_mapper` folder (or use the pre-zipped
+1. Zip this whole `arkit_pose_recorder` folder (or use the pre-zipped
    copy if you have one).
 2. In Blender: Edit > Preferences > Add-ons > Install, select the zip.
-3. Enable "ARKit BlendShape Bone Recorder."
+3. Enable "ARKit Pose Recorder."
 4. The panel appears in the 3D Viewport sidebar (press N), under an
-   "ARKit Shapes" tab.
+   "ARKit Poses" tab.
 
 ## Folder structure
 
 ```
-blendshape_bone_mapper/
+arkit_pose_recorder/
 ├── __init__.py                      addon code
 ├── README.md                        this file
-└── blendshape_bone_mapper_gifs/     one <shapeName>.gif per ARKit shape
+└── arkit_pose_recorder_gifs/        one <shapeName>.gif per ARKit shape
 ```
 
 The GIFs folder must stay inside this addon folder and keep this exact
@@ -72,7 +72,7 @@ panel draws.
   stored, so it's fine to touch just a couple of bones per shape.
 - **Preview** recalls a saved pose onto the rig for review; **Reset**
   snaps the rig back to rest without touching saved data. Nothing is
-  lost by navigating between shapes — only Save Pose writes.
+  lost by navigating between shapes — only Save Pose writes pose data to file.
 - Expand **Description** to see tracking/modeling notes, plus an
   animated reference GIF if Pillow is installed (first expand of a given
   shape takes a moment to decode; cached after that for the session).
@@ -110,3 +110,14 @@ file and import it into a different character built on the same rig
   require left/right bones to be perfectly symmetric) but treats each
   moved bone independently — correct for the vast majority of face
   shapes, which drive one bone per side per shape.
+
+## Acknowledgements
+
+Much of the data and information for this project came from the following repo:
+[52blendshapes-for-VRoid-face](https://github.com/hinzka/52blendshapes-for-VRoid-face)
+
+Additional information and GIFS came from this Google Doc, referenced by the same repo:
+[Google Doc](https://docs.google.com/document/d/1L03xvTlsa8pJmjsbOZkJW3U2g-8DnJ4M-kelE4ktKdA/edit?usp=sharing)
+
+Apple's ARKit Face Anchor documentation can be found here:
+[ARFaceAnchor.BlendShapeLocation Documentation](https://developer.apple.com/documentation/arkit/arfaceanchor/blendshapelocation)
