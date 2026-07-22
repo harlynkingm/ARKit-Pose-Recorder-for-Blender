@@ -7,6 +7,10 @@ Includes left/right mirroring, JSON presets reusable across characters
 built on the same rig, and animated reference GIFs shown right in the
 panel.
 
+## Preview
+
+![ARKit pose recorder UI in Blender](https://github.com/harlynkingm/ARKit-Pose-Recorder-for-Blender/raw/main/previewImage.png "ARKit pose recorder UI in Blender")
+
 ## Requirements
 
 - Blender 4.0+ (tested on 5.1)
